@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mint2act | Projektbasiertes MINT-Lernen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">mint2act</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menü</button>
+        <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+          <a href="index.html">Start</a>
+          <a href="module/index.html">Module</a>
+          <a href="wiki/index.html">Wiki</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <p class="eyebrow">Projektbasierte Lernplattform</p>
+        <h1>Willkommen bei mint2act</h1>
+        <p>Dies ist eine minimalistische Probeseite für die geplante Lernplattform.</p>
+      </section>
+
+      <section class="container cards" aria-label="Bereiche der Plattform">
+        <article class="card">
+          <h2>Module</h2>
+          <p>Hier finden Schüler:innen die einzelnen Unterrichtsmodule.</p>
+          <a href="module/index.html">Modulübersicht öffnen →</a>
+        </article>
+
+        <article class="card">
+          <h2>Wiki</h2>
+          <p>
+            Das Wiki ist als Zettelkasten aufgebaut: kurze Lernbausteine zu Themen und Tools,
+            direkt verlinkbar aus Modulen oder einzeln aufrufbar.
+          </p>
+          <a href="wiki/index.html">zu den Lernbausteine →</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> mint2act</p>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('#main-nav');
+
+      menuToggle?.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+
+      document.querySelector('#year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
